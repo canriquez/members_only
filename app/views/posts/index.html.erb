@@ -1,30 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row justify-content-center">
+    <% if user_signed_in? %>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card mb-3" style="width: 100%;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png " class="card-img" alt="profile">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= "@#{current_user.username}" %></h5>
+                <p class="card-text"><%= current_user.name %></p>
+                <p class="card-text"><%= current_user.email %></p>
+                <p class="card-text"><%= "You have #{current_user.posts.size} posts" %></p>
+                <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end%>
+    <div class="col-12 col-sm-6 col-md-8 d-flex flex-column align-items-center">
+      <% @posts.each do |post| %>
+        <div class="card" style="width: 50%;">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p><%= post.body %></p>
+            <% if is_member(current_user) %>
+              <small><%= "@#{post.user.username}" %></small>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <% if is_member(@user) %>
-          <td>User: <%= post.user.username %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
