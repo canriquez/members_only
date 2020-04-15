@@ -17,7 +17,9 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= post.user.username %></td>
+        <% if is_member(@user) %>
+          <td>User: <%= post.user.username %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
