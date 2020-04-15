@@ -1,19 +1,16 @@
 class PostsController < ApplicationController
-
   before_action :authenticate_user!, except: %i[index]
-  #before_action :set_post, only:[:create]
+  # before_action :set_post, only:[:create]
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
-   
   end
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -21,15 +18,13 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = current_user.posts.build(post_params)
-    #@post = Post.new(post_params)
-
+    # @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -67,13 +62,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :body, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id)
+  end
 end
