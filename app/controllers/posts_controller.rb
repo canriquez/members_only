@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
+  before_action :allowed?, only: [:new]
   # before_action :set_post, only:[:create]
 
   # GET /posts
@@ -62,6 +63,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def allowed?
+    redirect_to root_url if !helpers.member?(current_user)
+  end
+
 
   # Use callbacks to share common setup or constraints between actions.
   def set_post

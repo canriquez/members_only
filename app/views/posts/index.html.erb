@@ -9,11 +9,13 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><%= "@#{current_user.username}" %></h5>
+                <h5 class="card-title"><%= "@#{current_user.username} | (#{current_user.user_type})" %></h5>
                 <p class="card-text"><%= current_user.name %></p>
                 <p class="card-text"><%= current_user.email %></p>
                 <p class="card-text"><%= "You have #{current_user.posts.size} posts" %></p>
-                <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+                <% if member?(current_user) %>
+                  <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+                <% end %>
               </div>
             </div>
           </div>
