@@ -1,0 +1,8 @@
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+

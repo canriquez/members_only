@@ -1,57 +1,60 @@
-# Project Name
+# Member Only!
 
-> One paragraph statement about the project.
+This project builds a Rails application for an exclusive clubhouse where members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
-![screenshot](./app_screenshot.png)
+## Access hierarchy  
 
-Additional description about the project and its features.
+- Anonymous access: Access without a login will show all posts but with no possibility to show the Post's creator.
+- User access: If a user signs up, all posts will be shown but with no option to show the Post's creator.
+- Memeber access: Member rights are provided by an 'admin' user. After login as a member, all Posts and creator information is displayed.
+- Admin: Full access.
+
+- [Live Application Access](https://powerful-garden-93253.herokuapp.com/)
+
+## Environment set up requirements
+
+To run this project, you need ruby installed in your environment
+Run the following command:
+
+```
+$ ruby -v
+```
+
+You should have a result similar to this:
+s
+```
+ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux]
+```
+
+If you don't get that result, follow this [link](https://www.ruby-lang.org/en/documentation/installation/) and install Ruby in your local environment.
+
+### Setup
+- Clone this repository in your local environment
+- Located on the root of repository execute 
+
+```bundle install``` 
+ 
+This action will install all the required dependencies. 
+
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Ruby
+- Ruby on Rails
 
 ## Authors
 
-👤 **Author1**
+👤 **HADDAD SOHAIB**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@HADDADSOHAIB](https://github.com/HADDADSOHAIB)
+- Twitter: [@HaddadSohaib](https://twitter.com/HaddadSohaib)
+- Linkedin: [linkedin](https://www.linkedin.com/in/sohaibhaddad/)
 
-👤 **Author2**
+👤 Carlos Anriquez
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@canriquez](https://github.com/canriquez)
+- Twitter: [@cranriquez](https://twitter.com/cranriquez)
+- Linkedin: [linkedin](https://www.linkedin.com/in/carlosanriquez/)
 
 ## 🤝 Contributing
 
@@ -62,13 +65,3 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
