@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center flex-column">
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h5 class="card-title text-center">New Post</h5>
+
+        <%= render 'form', post: @post %>
+
+        <%= link_to 'Back', posts_path %>
+    </div>
+  </div>
+</div>
